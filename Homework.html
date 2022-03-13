@@ -1,126 +1,132 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-
-#ita{
-    font-style: italic;
-    color:grey;
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+    margin: 0;
+    height: 100vh;
+    }
+    header{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-evenly;
+        border-bottom: 3px solid grey;
+        margin: 8%;
 }
-#pr1{
-    text-align: left;
-    line-height: 1.6;
-    
+#Titlepage{
+    font-size: 1.0rem ;
+    width: 70%;
+   margin: -3%;
+   text-align: left;
+}
+#Pagetitle{
+    width: 70%;
+    margin: -75px 89px 10px 96px;
+    font-size: 1.7rem;
     
 }
-
-#pr2{
-    text-align: left;
+#date{
+    margin:0px 89px 10px 96px;
+    color: grey;
+}
+#text{
+    width: 70%;
+    margin:0px 89px 10px 96px;
     line-height: 1.6;
-    
 }
 #list{
+    width: 70%;
+    margin:0px 89px 10px 96px;
     line-height: 1.6;
+
 }
-#hai{
-    width: 100%;
-    text-align: right;
-}
-.inner{
-    display: inline-block;
-    border: none;
-  padding: 2px 80px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0px;
-  margin: 4px 2px;
-  cursor: pointer;
-  
-    
-}
-</style>
+    </style>
 </head>
 <body>
-    <div>
-        <span>Jeremy's Blog</span>
-
-       <div id="hai">
-          <div class="inner"><button>HOME</button></div>
-          <div class="inner"><button>ABOUT</button></div>
-          <div class="inner"><button>ARCHIVE</button></div>
+    <aside>
+        <header>
+            <div id="Titlepage"> 
+                Jeremy's Blog
+            </div>
+            <div class="button"><button>HOME</button></div>
+            <div class="button"><button>ABOUT</button></div>
+            <div class="button"><button>ARCHIVE</button></div>
+        </header>
+    </aside>
+    <main>
+        <div id="Pagetitle">
+            <strong>Rules of Autocomplete</strong>
         </div>
-    <br/> <br/>
+        <div id="date">
+            <p>Posted on March 19,2019</p>
+        </div>
+        <div id="text">
+            <p>Autocompleting text with known values seems like an easy problem to solve,
+                but so so so many UIs get it wrong. I see his frequently enough that,
+                rather than complain about them individually, I though I'd just write
+                down the set of rules they often break. 
+                </p>
+                <p>
+                    There may be cases where some of these rules aren't the best thing
+                    to do, but theere should be good reason for breaking one of these 
+                    rules (for example,sime of these rules don't apply if a field must
+                    be filled with a value from a fixed set, like the list of US states).
+                    Following these rules should always result in at very least a sane 
+                    experience:
+            
+                </p>
+
+        </div>
+        <div id="list">
+            <ul>
+                <li>Exact matches always come first.If the user types in an option 
+                    exatctly, other options must always go below the one matching what
+                    they typed.
+                </li>
+                <li>Besides exact matches, prefix matches come first. If i type"Fr" I 
+                    want "Fresno" not "San Francisco."
+                </li>
+                <li>Afert prefix matches,it can fall back to sustring matches. Starting
+                    with substring matches would always be the wrong thing to do since 
+                    users start typing words at the beginning not somewhere in the middle.
+                </li>
+                <li>If there are not substring matches, it can optionally fall back to
+                    subsequence matching. This is only useful in some cases.          
+                </li>
+                <li>If there are no subsequence/substring matches, it can optionally 
+                    fall back to approximate matches. This is rarely necessary to 
+                    provide.
+                </li>
+                <li>Matches should be sorted alphabetically.
+                </li>
+                <li>When one option is the prefix of another, put the <i>shortest one first.</i>
+        
+                </li>
+                <li>The matching should probably be case insensitive unless there are 
+                    two options that differ only by case. In that case (oun intended)
+                    prefer the one that more closely matches the user's input. 
+                </li>
+                <li>
+                    The action to make use of the selection (e.g. to search the term)
+                    must be a different key than the action to accept the first 
+                    suggestion <i>unless</i> you have to do something first to start
+                    using autocomplete suggestions (e.g. hit the down arrow). The user
+                    should never have to take extra steps to <i>not</i> use autocomplete.
+                </li>
+        
+        
+        
+        
+            </ul>
+        
+        </div>
+    </main>
     
-
-    <hr>
-
-    <h1>Rules for Autocomplete</h1>
-<div id="ita">
-    <h4>Posted on March 19,2019</h4>
-</div>
-<div id="pr1"></div>
-    <p>Autocompleting text with known values seems like an easy problem to solve,
-    but so so so many UIs get it wrong. I see his frequently enough that,
-    rather than complain about them individually, I though I'd just write
-    down the set of rules they often break. 
-    </p>
-</div>
-<div id="pr2">
-    <p>
-        There may be cases where some of these rules aren't the best thing
-        to do, but theere should be good reason for breaking one of these 
-        rules (for example,sime of these rules don't apply if a field must
-        be filled with a value from a fixed set, like the list of US states).
-        Following these rules should always result in at very least a sane 
-        experience:
-
-    </p>
-</div>
-<div id="list">
-    <ul>
-        <li>Exact matches always come first.If the user types in an option 
-            exatctly, other options must always go below the one matching what
-            they typed.
-        </li>
-        <li>Besides exact matches, prefix matches come first. If i type"Fr" I 
-            want "Fresno" not "San Francisco."
-        </li>
-        <li>Afert prefix matches,it can fall back to sustring matches. Starting
-            with substring matches would always be the wrong thing to do since 
-            users start typing words at the beginning not somewhere in the middle.
-        </li>
-        <li>If there are not substring matches, it can optionally fall back to
-            subsequence matching. This is only useful in some cases.          
-        </li>
-        <li>If there are no subsequence/substring matches, it can optionally 
-            fall back to approximate matches. This is rarely necessary to 
-            provide.
-        </li>
-        <li>Matches should be sorted alphabetically.
-        </li>
-        <li>When one option is the prefix of another, put the <i>shortest one first.</i>
-
-        </li>
-        <li>The matching should probably be case insensitive unless there are 
-            two options that differ only by case. In that case (oun intended)
-            prefer the one that more closely matches the user's input. 
-        </li>
-        <li>
-            The action to make use of the selection (e.g. to search the term)
-            must be a different key than the action to accept the first 
-            suggestion <i>unless</i> you have to do something first to start
-            using autocomplete suggestions (e.g. hit the down arrow). The user
-            should never have to take extra steps to <i>not</i> use autocomplete.
-        </li>
-
-
-
-
-    </ul>
-
-
-</div>
-
 </body>
 </html>
