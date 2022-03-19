@@ -1,0 +1,68 @@
+body{
+    margin: 0;
+    height: 100vh;
+  
+}
+header{
+    
+    padding: 10px;
+    background-color: rgb(226, 221, 221);
+}
+#content{
+    display: flex;
+    
+    width: 35%;
+    margin: 50px 500px;
+    flex: 1;
+    width: 800px;
+    height: 300px;
+    padding: 15px;
+    background-color: rgb(226, 221, 221);
+}
+label{
+    display: flex;
+    
+}
+#Mesaje{
+    position: relative;
+    left:442px;
+    top: -245px;
+  
+}
+input[type="text"]
+{
+font-size:24px;
+}
+#buton{
+position: relative;
+left: 67%;
+
+
+}
+.button{
+background-color: blue;
+color: white;
+cursor: pointer;
+font-size: 16px;
+padding: 8px 7px;
+}
+#para{
+text-align: center;
+font-size: 1.6rem;
+}
+#sites{
+display: flex;
+justify-content: center;
+justify-content: space-between;
+width: 30%;
+margin:auto;
+border-top: 1px solid grey;
+padding: 20px;
+
+}
+header{
+font-size: 2.0rem;
+
+
+
+}
