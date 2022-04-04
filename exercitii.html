@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function par(nr){
+    let rezultat
+    if(nr % 2=== 0){
+        rezultat = "par"
+    } else {
+        rezultat = "impar"
+    }
+    return rezultat;
+}
+    console.log(par(5));
+     
+    function fahrenheit(c){
+        return (c * 9) / 5 + 32;
+    }
+    function celsius(f) {
+        return ((f-32)*5) / 9;
+    }
+    console.log(fahrenheit(0));
+    console.log(fahrenheit(20));
+    console.log(fahrenheit(100));
+    console.log(celsius(0));
+    console.log(celsius(20));
+    console.log(celsius(100));
+    
+    console.log(celsius(fahrenheit(0)));
+    console.log(celsius(fahrenheit(20)));
+    console.log(celsius(fahrenheit(100)));
+
+    function max(a,b){
+        if (a>b){
+            return a;
+        }
+        return b;
+    }
+
+    function max3(a,b,c){
+        if(a>=b && a>=c){
+            return a;
+        }else if (b >= a && b>=c){
+            return b;
+        }else {
+            return c;
+        }
+    }
+
+    function indeceMasaCorporala(greutate,inaltime){
+        let imc = greutate / (inaltime*inaltime);
+        let tip;
+        if (imc<20){
+            tip = "subponderal";
+        }else if (imc < 25) {
+            tip = "normal";
+        }else if (imc < 30){
+            tip = "supreaponderal";
+        }else if (imc < 40){
+            tip = "obez";
+        }else {
+            tip = "bolnav";
+        }
+        return `La greutatea de ${greutate}kg si inaltime de ${inaltime}m esti ${tip}`;
+    }
+     console.log(indeceMasaCorporala(55, 1.73));
+     console.log(indeceMasaCorporala(55, 1.73));
+     console.log(indeceMasaCorporala(55, 1.73));
+     console.log(indeceMasaCorporala(55, 1.73));
+     console.log(indeceMasaCorporala(55, 1.73));
+     console.log(indeceMasaCorporala(55, 1.73));
+
+    function mpg(v){
+        return((3.78541178 / 1.609344)* 100) / v;
+    }
+    console.log(mpg(30));
+    console.log(mpg(50));
+    console.log(mpg(70));
+
+    function arie(l1 ,l2){
+        let a = l1 * l2;
+        return a;
+    }
+    console.log(arie(4,5));
+     function patrat(latura){
+         let b = arie(latura, latura);
+         return b;
+     }
+      console.log(patrat(20));
+
+   
+    function media(a,b,c,d, notaTeza){
+        let m = (((a+b+c+d)/4)*3 + notaTeza) / 4;
+        return m
+    }
+    console.log(media(5,5,5,5,10));
+
+    
+    function sumx (a, b){
+        if(a===b) {
+            return (a+b)*3;
+        }else {
+            return a+b;
+        }
+    }
+
+    console.log(sumx(2,3));
+    console.log(sumx(2,2));
+
+    function calcSum(a,b){
+        if(a === b){
+            return (a + b) * 3;
+        }else return a + b;
+    }
+
+    function hourConv (num) {
+        let hours = (num / 60 / 60/ 60) % 60;
+        let minutes = (num / 60 / 60) % 60;
+        let sec = (num / 60) % 60;
+        let msec = num % 60;
+        
+        return `${hours} hours ${minutes} minutes ${sec} secunds ${msec} miliseconds`;
+    }
+    
+    function verif50 (a, b) {
+        if (a === 50 || b === 50){
+            return true;
+        }else if (a + b ===50){
+            return true;
+        } else return false;
+    }
+    
+    function verificaPozNeg (a, b) {
+        if ((a > 0 && b < 0) || (a < 0 && b > 0)){
+            return true;
+        }else return false;
+    }
+
+    function verificaDiv (a) {
+        if (a % 3 === 0 || a % 7 === 0){
+            return true;
+        }else return false;
+    }
+
+    function verifica8 (a, b){
+        if (a === 8 || b === 8 || a + b === 8 || a - b === 8){
+            return true;
+        }else return false;
+
+    }
+
+    function verificaUltimele3 (a, b, c) {
+        if (a % 10 === b % 10 && a % 10 === c % 10){
+            return true;
+        }else return false;
+    }
+
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
