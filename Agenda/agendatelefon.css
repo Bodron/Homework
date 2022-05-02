@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+    background: rgb(211, 211, 144);
+}
+
+#container{
+    width: 400px;
+    height: 200px;
+    margin: auto;
+    background-color: #e5e75a;
+    padding: 30px;
+}
+input, text{
+    background: none;
+    border: none;
+    border-bottom: 1px #ccc solid;
+    padding: 0 1em 0.5em 0;
+    width: 40%;
+    color: #fff;
+    font-size: 1.1em;
+    
+    
+    
+}
+#form {
+    
+    width: 250;
+  
+    
+}
+
+#titlu{
+    text-align: center;
+    font-weight: 400;
+    padding: 25px;
+    font-size: 3.5em;
+    
+    
+}
+#list{
+   border: none;
+   margin:auto;
+   background-color: #e5e75a;
+   
+
+}
+input[type=submit]{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 15px;
+    background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    font-size: 20px;
+}
+button{
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  text-decoration: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="agendatelefon.js"></script>
+    <link rel="stylesheet" href="agendatelefon.css">
+</head>
+<body onload="draw();"> 
+    <h1 id="titlu">Agenda</h1>
+    <div id="container">
+        
+        <form id="form" onsubmit="adauga(event);">
+            <label> Nume: 
+             <input type="text" name="Nume" placeholder="Nume" />
+        
+    </label>
+</br></br>
+    <label> Telefon:
+        <input id="tlf"; 
+        onkeydown="";
+        type="text" name="Numar" placeholder="Telefon" />
+    </label>
+</br></br>
+<div>
+    <input type="submit" value="Adauga" />
+</div>
+    </form>
+    </div>
+    <table id="list"  style="border-collapse:collapse;">
+        <thead>
+            <tr>
+                <th style="width: 40%;">Nume</th>
+                <th style="width: 20%;">Telefon</th>
+                <th style="width: 100px;"></th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

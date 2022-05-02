@@ -6,253 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        // // O functie "equals" care primeste 2 parametrii si returneaza daca cei 2 parametrii sunt egali, strict
-        function equals(a, b){
-            let rezultat;
-            if ( a === b){
-                rezultat = "Egal";
-            }
-            return rezultat;
-        }
-        console.log(equals(5, 5));
-
-        // //O functie "compare" care primeste 2 parametrii si returneaza -1 daca primul e mai mic ca al doilea, 0 daca sunt egale si 1 daca primul e mai mare ca al doilea
-        function compare(a, b){
-            let tip;
-            if(a < b){
-                tip ="-1";
-            }else if (a === b){
-                tip ="0";
-            }else if (a > b ){
-                tip ="1";
-            }
-            return `La numerele A = ${a} si B = ${b} rezultatul este ${tip}`;
-        }
-        console.log(compare(1, 3));
-
-        // //O functie "max" care primeste 2 parametrii si returneaza maximul dintre cele 2
-        function max(a, b){
-            if(a > b || b > a){
-                return a;
-            }
-            return b;
-        }
-        console.log(max(88, 3));
-
-        // //O functie "min" care primeste 2 parametrii si returneaza minimul dintre cele 2
-        function min(a, b){
-            if(a < b){
-                return a; 
-            }else if(b < a){
-                return b;
-            }
-            
-        }
-        console.log(min(2, 5));
-
-        // //O functie "suma" care primeste 1 parametru, numar intreg si returneaza suma primelor N numere naturale pozitive (exemplu: daca N este 3, trebuie sa returneze 6)
-        function suma(n){
-            let sum = 0;
-            for(let i = 1; i<=n;  i++){
-                 sum += i;
-            }
-            return sum;
-        }
-        console.log(suma(2));
-        
-        // //O functie "prim" care primeste 1 parametru si returneaza true/false daca N este numar prim sau nu (restul impartirii la 1 si la N ==0)
-        function prim(a){ 
-           if (a ===1){
-               return false;
-           }else if(a === 2){
-           return true;
-           }else{
-               for( let x = 2; x < a; x++){
-                   if (a % x === 0){
-                       return false;
-                   }
-               }
-               return true;
-           }
-        }
-        console.log(prim(21));
-
-        // //O functie "sumaPrime" care primeste 1 parametru si returneaza suma primelor N numere prime (pentru N=5 trebuie sa returneze 2+3+5+7+11=28)
-        function sumaPrime(n){
-         var answer = 0;
-         var i = 1;
-         while( i < n){
-             if (prim(i ) == 1 ){
-                 answer += i;
-             }
-             
-         }
-         return answer;
-        }
-        console.log(sumaPrime(5));
-        
-        
-
-        // //O functie "invers" care primeste un parametru de tip numar si intoarce inversul acestuia (ca numar) (123 => 321)
-        function invers(num){
-            let strInversat = 0;
-            while (num > 0){
-                strInversat = strInversat * 10 + num % 10;
-                num = Math.floor(num / 10);
-            }
-            return strInversat;
-        }
-        console.log(invers(231));
-
-        //    O functie "produsImpare" care primeste 1 parametru si returneaza produsul primelor N numere impare pozitive (pentru N=5; returneaza 1*3*5*7*9=945)
-        function produsImpare(n){
-           let x = 1;
-           let p = 1;
-
-           for (let i = 0; i < n; i++) {
-               p = p * x;
-               x = x + 2;
-           }
-
-           return p;
-        }
-        console.log("ProduseImpare" + "-" + produsImpare(5));
-        
-        // O functie "contains" care primeste 2 parametri(arr - array de nr intregi si x - numar) si verifica daca x exista in array (rezultatul este true/false)
-        
-        function contains(arr, x){
-            for(let y of arr){
-                if (y === x){
-                    return true;
-                }
-                
-            }
-            return false;
-        }
-    console.log(contains([1, 2, 3, 5, 6, 7], 3));
-
-    //O functie "maxArray" care primeste un array si returneaza valoarea maxima (ar trebui sa functioneze si pentru numere si pentru stringuri)
-
-    function maxArray(arr){
-        let z = arr[0];
-        for(let u of arr){
-            if (u > z){
-                z = u;
-            }
-        }
-        return z;
-    }
-        console.log(maxArray([122,2,3,4,5,6, 88,120]));
-
-        // O functie "sumMinMax" care primeste un array de numere si returneaza suma dintre valoare maxima si valoare minima
-        function maxArry(arr){
-        let max = 0;
-        for(let u of arr){
-            if (u > max){
-                max = u;
-            }
-        }
-        return max;
-    }
-    function minArry(arr){
-        let min = 999999;
-        for (let q of arr){
-            if(q < min){
-                min = q;
-            }
-        }   
-        return min;
-     }
-    function sumMinMax(arr) {
-        let min = minArry(arr); 
-        let max = maxArry(arr);
-        return min + max;
-    }
-           
-        
-        console.log(sumMinMax([1,2,3,4,5,6]));
-        
-        //O functie "hasDuplicates" care primeste un array si returneaza daca exista duplicate intr-un array primit ca parametru (true/false)
-
-        function occurrences(arr, val){
-                let nr = 0;
-
-            for (let value of arr) {
-                 if(value === val){
-                      nr++;
-                }
-             }
-                     return nr;
-                }
-                function hasDuplicates (arr){
-                    for (let value of arr){
-                    if ( occurrences(arr, value) > 1){
-                        return true; 
-                    }
-                
-                    return false;
-                }
-                }
-            console.log(occurrences([1, 2, 2, 4, 2], 2));
-            console.log(hasDuplicates([1,2,4,5,6,4,8,4]));
-
-        //O functie "produsPozitive" care primeste un array si returneaza produsul numerelor pozitive intr-un array primit ca parametru
-        
-        function produsPozitive (array) {
-    var sum=1;
-    for (var i=0; i < array.length; i++) {
-       if(array[i] > 0){
-          sum = sum * array[i];   
-        }
-
-    } 
-    return sum;
-}
-console.log(produsPozitive([2,4,-5,-6]));
-    //O functie "palindrom" care primeste un string si returneaza daca este palindrom (inversul == originalul, ex: "1234321", "55", "787") (true/false)
-
-function palindrom(str) {
-    let len = str.length;
-    for (let i = 0; i < len / 2; i++) {
-        if (str[i] !== str[len - 1 - i]) {
-            return false;
-        } else {
-            return true;
-        }
-    }
-}
-console.log(palindrom("level"));
 
     //O functie "getDigits" care primeste un sir de caractere si returneaza cifrele din sirul respectiv;
-function getDigits(str) {
+    function getDigits(str) {
+let results = "";
     for (let i = 0; i < str.length; i++) {
-        if (str[i] <= 9 && str[i] > 0) {
-            console.log(str[i]);
+        if (str[i] <= 9 && str[i] >= 0) {
+            results += str[i];
         }
+
     }
+    return results;
 }
 console.log(getDigits("Ana ar45e me7re"));
 
     // O functie "getLetters" care primeste un sir de caractere si returneaza doar literele din sirul respectiv
-function getLetters(str) {
+    function getLetters(str) {
+let results = "";
     for (let i = 0; i < str.length; i++) {
         if (str[i] >= "a" && str[i] <= "z" || str[i] >= "A" && str[i] <= "Z" ) {
-            console.log(str[i]);
+             results += str[i];
         }
     }
+return results;
 }
 console.log(getLetters("123Amse8963t"));
     // O functie "getFirst5Letters" care primeste un sir de caractere si returneaza primele 5 litere(daca exista)
 function getFirst5Letters(str) {
     let n = 1;
+    let results = "";
     for (let i = 0; i < str.length; i++) {
         if (n <= 5) {
             if (str[i] >= "a" && str[i] <= "z" || str[i] >= "A" && str[i] <= "Z" ) {
-            console.log(str[i]);
             n++;
+            results += str[i];
          }
         }
     }
+    return results;
 }
 console.log(getFirst5Letters("123Anapetrica8769345"));
 
@@ -268,28 +59,31 @@ console.log(concatenate(["ana", "are", "mere"]));
 
 // O functie "getAllDigits" care primeste o lista de siruri de caractere si returneaza cifrele din toate sirurile
 function getAllDigits(arr) {
+    let results = "";
     for (let value of arr) {
-        getDigits(value);
+       results += getDigits(value);
     }
+    return results;
 }
 console.log(getAllDigits(["As34", "tr56", "freds"]));
 
 // O functie "invertAllStrings" care primeste o lista de siruri de caractere si returneaza lista de siruri de caractere inversate
-function invertStrings(str) {
-    let strInversat = "";
-            for (let  i = 0; i< str.length; i++){
-                strInversat = strInversat + str[str.length - 1 - i];
-            }
-            console.log(strInversat);
+// function invertStrings(str) {
+//     let strInversat = "";
+//             for (let  i = 0; i< str.length; i++){
+//                 strInversat = strInversat + str[str.length - 1 - i];
+//             }
+//             return strInversat;
          
-        }
+//         }
 
-function invertAllStrings(arr) {
-    for (let value of arr) {
-        invertStrings(value);
-    }
-}
-console.log(invertAllStrings(["Andrei", "are", "pere"]));
+// function invertAllStrings(arr) {
+//     for (let  i = 0; i< str.length; i++) {
+//         arr[i] = invertStrings(arr[i]);
+//     }
+//     return arr;
+// }
+// console.log(invertAllStrings(["Andrei", "are", "pere"]));
 
 // Calculeaza factorialul unui numar ("factorial")
 function factorial(nr){
@@ -306,7 +100,7 @@ console.log(factorial(5));
 function cmmdc(a,b) {
     while (a !==b) {
         if(a > b) {
-            a = a - y;
+            a = a - b;
         }
         else {
             b = b - a;
@@ -317,10 +111,67 @@ function cmmdc(a,b) {
 console.log(cmmdc(10,20));
 
 // Calculeaza cel mai mic multiplu comun al 2 numere ("cmmmc")
-function cmmc(x,y) {
-    let cmmc = (x * y) / cmmdc;
+function cmmmc(a,b) {
+    return (a * b) / cmmdc(a,b);
 }
-console.log(cmmc(10,15));
+
+console.log(cmmmc(10,15));
+
+// Returneaza un array care sa contina toti divizorii unui numar (ex pentru 64: trebuie sa returneze [2,4,8,16,32]) ("divizori")
+function divizori(n,arr)
+{
+    let arry = [i];
+    for (var i = 1; i*i < n; i++) {
+        if (n % i == 0)
+           return (i + " ");
+    }
+    for (var i = Math.sqrt(n); i >= 1; i--) {
+        if (n % i == 0)
+            return (" " + n / i);
+    }
+}
+ 
+//1 2 4 8 16 32 641 3 91 2 3 1 3 9 27 811 3 7
+
+// O functie care verifica daca un numar este palindrom (ex: 121, 1234321) ("palindrom")
+ function palindrom(string) {
+    let len = string.length;
+    for (let i = 0; i < len / 2; i++) {
+        if (string[i] !== string[len - 1 - i]) {
+            return false;
+        }   
+    }
+    return true;
+}
+
+// O functie care sorteaza numerele pare dintr-un sir de numere primit ca parametru. ("sort")
+
+function sortare(arr){
+    let aux = 0;
+   for (let i = 0; i < arr.length;i++ ){
+       for (let j = i + 1; j < arr.length; j++){
+            if (arr[j] < arr[i]) {
+                aux = arr[i];
+                arr[i] = arr[j];
+                arr[j] = aux;
+            }
+       }
+   }
+   return arr;
+}
+function sort(arr) {
+    let arrPare = [];
+    let k = 0;
+    for (let i = 0; i < arr.length;i++){
+        if (arr[i] % 2 === 0){
+            arrPare[k++] = arr[i];
+        }
+    }
+    return sortare(arrPare);
+}
+console.log(sort([1,18,2,3,5,16,11,8]));
+
+  
     </script>
 </head>
 <body>
