@@ -67,6 +67,7 @@ function draw(){
                 <td  style="${elem.cumpara === true ? 'text-decoration: line-through' : '' }" id="${i}"><a href="${elem.nume}">${elem.nume}</a></td>
                 <td>
                 <button onclick="cut(${i})">Mark as Buyed</button>
+                <button onclick="del">Delete</button>
                 </td>
         </tr>
         `;
